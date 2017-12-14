@@ -9,7 +9,7 @@ import NotFound from '../imports/ui/NotFound';
 import Signup from './../imports/ui/Signup';
 
 const routes = (
-    <BrowserRouter>
+    <BrowserRouter >
         <div>
             <Switch>
                 <Route exact path="/" component={Login}/>

@@ -1,8 +1,10 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
 import { Accounts } from 'meteor/accounts-base';
 
-export default class Signup extends React.Component {
+class Signup extends React.Component {
 
     constructor(props) {
         super(props);
@@ -21,9 +23,6 @@ export default class Signup extends React.Component {
             console.console('Signup callback', err);
         });
 
-        // this.setState({
-        //     error: 'Something went wrong.'
-        // });
     }
 
     render() {
@@ -45,3 +44,5 @@ export default class Signup extends React.Component {
         );
     }
 }    
+
+export default withRouter(Signup);

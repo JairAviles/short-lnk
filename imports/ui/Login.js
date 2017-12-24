@@ -1,9 +1,10 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 import { Meter } from 'meteor/meteor';
 
-export default class Login extends React.Component {
+class Login extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,7 +20,7 @@ export default class Login extends React.Component {
         let password = this.refs.password.value.trim();
         
         Meteor.loginWithPassword({email}, password, (err) => {
-            console.console('Login callback', err);
+            console.log('Login callback', err);
         });
     }
 
@@ -42,3 +43,5 @@ export default class Login extends React.Component {
         );
     }
 }    
+
+export default withRouter(Login);

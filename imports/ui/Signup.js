@@ -20,7 +20,12 @@ class Signup extends React.Component {
         let password = this.refs.password.value.trim();
 
         Accounts.createUser({email, password}, (err) => {
-            console.console('Signup callback', err);
+            console.log('Signup callback', err);
+            if (err) {
+                this.setState({error: err.reason});
+            } else {
+                this.setState({error: ''});
+            }
         });
 
     }

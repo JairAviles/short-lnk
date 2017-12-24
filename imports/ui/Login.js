@@ -24,6 +24,12 @@ class Login extends React.Component {
         });
     }
 
+    componentWillMount() {
+        if (Meteor.userId()) {
+            this.props.history.replace("/links"); 
+        }    
+    }
+
     render() {
         return  (
             <div>

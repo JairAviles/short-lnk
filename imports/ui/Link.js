@@ -9,6 +9,12 @@ class Link extends React.Component {
         Accounts.logout();
     }
 
+    componentWillMount() {
+        if (!Meteor.userId()) {
+            this.props.history.replace("/"); 
+        }    
+    }
+
     render() {
         return  (
             <div>

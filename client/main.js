@@ -13,12 +13,13 @@ import Signup from './../imports/ui/Signup';
 const unauthenticatedPages = ['/', '/signup'];
 const authenticatedPages = ['/links'];
 const history = createBrowserHistory();
+
 const routes = (
     <Router history={ history } forceRefresh={true}>
         <div>
             <Switch>
-                <Route exact path="/" component={Login}/>
-                <Route path="/signup" component={Signup}/>
+                <Route exact path="/" component={Login} />
+                <Route path="/signup" component={Signup} />
                 <Route path="/links" component={Link}/>
                 <Route component={NotFound}/>
             </Switch>
@@ -37,9 +38,9 @@ Tracker.autorun(() =>{
     console.log('isUnauthenticatedPage', isUnauthenticatedPage);
 
     if (isUnauthenticatedPage && isAuthenticated) {
-        history.push("/links");
+        history.replace("/links");
     } else if (isAuthenticatedPage && !isAuthenticated) {
-        history.push("/");
+        history.replace("/");
     }
 
 });

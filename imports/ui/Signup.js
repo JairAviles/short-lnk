@@ -19,6 +19,10 @@ class Signup extends React.Component {
         let email = this.refs.email.value.trim();
         let password = this.refs.password.value.trim();
 
+        if (password.length < 9) {
+            return this.setState({error: 'Password must be more than 8 characters long'});
+        }
+
         Accounts.createUser({email, password}, (err) => {
             console.log('Signup callback', err);
             if (err) {
@@ -42,8 +46,8 @@ class Signup extends React.Component {
                 <h1> Join Short Link</h1>
 
                 {this.state.error ? <p>{this.state.error}</p> : undefined}
-
-                <form onSubmit={this.onSubmit.bind(this)}>
+ 
+                <form onSubmit={this.onSubmit.bind(this)} noValidate>
                     <input type="email" name="email" ref="email" placeholder="Email" />
                     <input type="password" name="password" ref="password" placeholder="Password" />
                     <button>Create Account</button>

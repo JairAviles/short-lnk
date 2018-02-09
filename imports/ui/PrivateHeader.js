@@ -4,25 +4,18 @@ import { withRouter } from 'react-router-dom';
 
 import { Accounts } from 'meteor/accounts-base';
 
-class PrivateHeader extends React.Component {
+const PrivateHeader = (props) => {
 
-    onLogout() {
-        Accounts.logout();
-    }
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <button onClick={() => Accounts.logout()}>Logout</button>
+        </div>
+    );
+};
 
-    render() {
-        return (
-            <header>
-                <h1>{ this.props.title }</h1>
-                <button onClick={this.onLogout.bind(this)}>Logout</button>
-            </header>
-        )
-    }
-
+ PrivateHeader.propTypes = {
+     title: PropTypes.string.isRequired
 }
 
-PrivateHeader.propTypes = {
-    title: PropTypes.string.isRequired
-} 
-
-export default withRouter(PrivateHeader);
+export default PrivateHeader;

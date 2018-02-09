@@ -5,7 +5,7 @@ import { Tracker } from 'meteor/tracker';
 import { routes, onAuthChanges } from '../imports/routes/routes';
 import './../imports/startup/simple-schema-configuration';
 
-Tracker.autorun(() =>{
+Tracker.autorun(() => {
     const isAuthenticated = !!Meteor.userId();
     onAuthChanges(isAuthenticated);
 });

@@ -24,7 +24,6 @@ class Signup extends React.Component {
         }
 
         Accounts.createUser({email, password}, (err) => {
-            console.log('Signup callback', err);
             if (err) {
                 this.setState({error: err.reason});
             } else {

@@ -10,8 +10,8 @@ export default () => {
         <div>
             <PrivateHeader title="Your Links" />
             <LinksListFilters />
-            <LinksList />
             <AddLinks />
+            <LinksList />
         </div>
     );
 };

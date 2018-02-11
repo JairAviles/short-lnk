@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 import { Tracker } from 'meteor/tracker';
 import { Session } from 'meteor/session';
 
@@ -13,5 +14,6 @@ Tracker.autorun(() => {
 
 Meteor.startup(() => {
     Session.set('showVisible', true);
+    Modal.setAppElement('#app');
     ReactDOM.render(routes, document.getElementById('app'));
 });

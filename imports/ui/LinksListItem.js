@@ -37,14 +37,14 @@ renderStats() {
         visitedMessage = `(visited ${ moment(this.props.lastVisitedAt).fromNow() } )`;
     }
 
-    return <p>{this.props.visitedCount} {visitMessage} {visitedMessage}</p>
+    return <p className="item__message">{this.props.visitedCount} {visitMessage} {visitedMessage}</p>
 }
 
 render() {
     return (
-        <div>
-            <p>{this.props.url}</p>
-            <p>{this.props.shortUrl}</p>
+        <div className="item">
+            <h2>{this.props.url}</h2>
+            <p className="item__message">{this.props.shortUrl}</p>
             {this.renderStats()}
             <a className="button button--pill button--link" href={this.props.shortUrl} target="_blank">
                 Visit

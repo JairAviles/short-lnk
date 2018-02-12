@@ -8,10 +8,12 @@ import LinksListFilters from './LinksListFilters';
 export default () => {
     return (
         <div>
-            <PrivateHeader title="Your Links" />
-            <LinksListFilters />
-            <AddLinks />
-            <LinksList />
+            <PrivateHeader title="Short Lnk" />
+            <div className="page-content">
+                <LinksListFilters />
+                <AddLinks />
+                <LinksList />
+            </div>    
         </div>
     );
 };
